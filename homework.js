@@ -2,6 +2,17 @@
 // member of the array, and returns a new array with that member removed.
 // For example, `remove(['Cadence', 'Ordel', 'Marion'], 'Marion')` results
 // in `['Cadence', 'Ordel']`.
+
+function remove(arr, member){
+
+    let newArray = []
+    for (let name of arr) {
+        if (name !== member) {
+            newArray.push(name)
+        }
+    }
+    return newArray
+}
 //
 // If the potential member is not in the array, return the array unchanged.
 // If the potential member is in the array, remove all instances of it from the array.
@@ -12,8 +23,27 @@
 // 3. Create a function called "sum" that takes an array of numbers and
 // returns the sum of those numbers.
 
+function sum(numbers) {
+    let sum = 0
+    return numbers.reduce(function(a,b){
+        return a + b
+      }, 0);
+    }
+
+
 // 4. Create a function called "average" that takes an array of numbers
 // and returns the average of those numbers.
+function average(grades) {
+    let total = 0;
+    if (grades.length === 0) {return undefined}
+for(let i = 0; i < grades.length; i++) {
+    total += grades[i];
+}
+let avg = total / grades.length;
+
+return total
+    
+}
 
 // 5. Create a function called "minimum" that takes an array of numbers and
 // returns the smallest number in that array.
@@ -47,3 +77,4 @@
 //
 // For example, `textList(['Cadence', 'Ordel', 'Marion'])` results in the string
 // `"Cadence,Ordel,Marion"`.
+ 
